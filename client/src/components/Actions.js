@@ -1,9 +1,9 @@
 import React from "react";
 
 const Actions = props => {
-  return (<div>
+  return (<div className="posts">
     {props.actions.map(action => {
-      return <div>
+      return <div className="post-box">
         <h2 onClick={() => props.history.push(`/actions/${action.id}`)}>{action.project_id}</h2>
         <p>{action.description}</p>
       </div>

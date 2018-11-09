@@ -35,14 +35,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Route exact path='/' component={Home} />
+          <Route path='/' component={Home} />
           <Route  path='/form' component={Form} />
           <Route path='/projects' render={props => <Projects {...props} projects={this.state.projects}/>} />
           <Route  path="/actions/:id" render={props => <Post {...props} actions={this.state.actions}/> }/>
           <Route exact path='/actions' render={props => <Actions {...props} actions={this.state.actions}/>} />
-          <Link to="/projects">Projects</Link>
-          <Link to="/actions">Actions</Link>
-          <Link to="/form">Form</Link>
+        
         </header>
         <div>
        

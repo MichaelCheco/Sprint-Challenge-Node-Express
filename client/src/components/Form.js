@@ -22,7 +22,10 @@ class Form extends Component {
 
   }
   render() {
-    return <form>
+    return( <div>
+    <h1 className="create">Create New Post</h1>
+    <form>
+      
     <input 
     type="text" 
     name="project_id"
@@ -46,6 +49,8 @@ class Form extends Component {
     />
     <button type="submit" onClick={this.handleSubmit}>Add</button>
     </form>;
+    </div>
+    )
   }
 }
 
