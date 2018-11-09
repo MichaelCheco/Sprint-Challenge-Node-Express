@@ -7,10 +7,12 @@ const Post = props => {
     const Post = props.actions.find(
         post => `${post.id}` === props.match.params.id
     )
-    return (
-        <div className="post">
+    
+        console.log(Post, 'post')
+        return (  <div className="post">
             <h2>{Post.description}</h2>
             <h2>{Post.project_id}</h2>
+            <button onClick={() => props.delete(Post.id)}>Delete</button>
         </div>
      );
 }

@@ -31,6 +31,13 @@ class App extends Component {
       console.log('ERROR', err)
     })
   }
+  deleteNote = id => {
+    axios
+      .delete(`http://localhost:9000/api/actions/${id}`)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
+    this.setState();
+  };
   render() {
     return (
       <div className="App">
@@ -38,7 +45,7 @@ class App extends Component {
           <Route path='/' component={Home} />
           <Route  path='/form' component={Form} />
           <Route path='/projects' render={props => <Projects {...props} projects={this.state.projects}/>} />
-          <Route  path="/actions/:id" render={props => <Post {...props} actions={this.state.actions}/> }/>
+          <Route  path="/actions/:id" render={props => <Post {...props} actions={this.state.actions} delete={this.deleteNote}/> }/>
           <Route exact path='/actions' render={props => <Actions {...props} actions={this.state.actions}/>} />
         
         </header>
