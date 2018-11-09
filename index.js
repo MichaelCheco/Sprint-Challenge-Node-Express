@@ -1,5 +1,7 @@
 const express = require('express');
+const cors = require('cors');
 const server = express();
+server.use(cors())
 const port = 9000;
 
 const configureMiddleware = require('./config/middleware');
