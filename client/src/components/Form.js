@@ -7,7 +7,8 @@ class Form extends Component {
     this.state = {
       project_id: '' ,
       description: '', 
-      notes: ''
+      notes: '',
+      completed: false
     };
   }
   handleChange = e => {
@@ -18,8 +19,8 @@ class Form extends Component {
     e.preventDefault();
     axios.post('http://localhost:9000/api/actions', {project_id, description, notes})
     .then(res => console.log(res)).catch(err => console.log(err))
-    this.setState({project_id: '', description: '', notes: ''})
-
+    this.setState({project_id: '', description: '', notes: '', completed: true})
+    setTimeout(() => this.setState({completed: false}), 1000)
   }
   render() {
     return( <div>
@@ -47,7 +48,7 @@ class Form extends Component {
     value={this.state.notes}
     onChange={this.handleChange}
     />
-    <button type="submit" onClick={this.handleSubmit}>Add</button>
+    <button type="submit" onClick={this.handleSubmit}>{this.state.completed ? 'Success' : 'Add'}</button>
     </form>;
     </div>
     )
