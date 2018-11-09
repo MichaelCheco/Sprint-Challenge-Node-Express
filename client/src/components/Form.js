@@ -8,7 +8,7 @@ class Form extends Component {
       project_id: '' ,
       description: '', 
       notes: '',
-      completed: false
+      completed: false,
     };
   }
   handleChange = e => {
