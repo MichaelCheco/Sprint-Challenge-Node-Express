@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom"
 const Home = () => {
     return ( <div className="home-container">
-        <h1>Home</h1>
+        <h1>Sprint-Challenge-Node-Express</h1>
         <div className="links">
           <Link to="/projects" className="link">Projects</Link>
           <Link to="/actions" className="link">Actions</Link>

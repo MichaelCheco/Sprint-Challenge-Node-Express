@@ -22,6 +22,7 @@ class Form extends Component {
     this.setState({project_id: '', description: '', notes: '', completed: true})
     setTimeout(() => this.setState({completed: false}), 1000)
   }
+  
   render() {
     return( <div>
     <h1 className="create">Create New Post</h1>

@@ -4,7 +4,7 @@ const Actions = props => {
   return (<div className="posts">
     {props.actions.map(action => {
       return <div className="post-box">
-        <h2 onClick={() => props.history.push(`/actions/${action.id}`)}>{action.project_id}</h2>
+        <h2 onClick={() => props.history.push(`/actions/${action.id}`)} className="post-link">{action.project_id}</h2>
         <p>{action.description}</p>
       </div>
     })}

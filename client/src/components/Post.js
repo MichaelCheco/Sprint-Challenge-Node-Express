@@ -8,8 +8,9 @@ const Post = props => {
         post => `${post.id}` === props.match.params.id
     )
     return (
-        <div>
+        <div className="post">
             <h2>{Post.description}</h2>
+            <h2>{Post.project_id}</h2>
         </div>
      );
 }
